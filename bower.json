@@ -1,0 +1,21 @@
+{
+  "name": "happening_places",
+  "version": "0.0.0",
+  "authors": [
+    "andela-mfalade <mayowa.falade@andela.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "static/libs",
+    "test",
+    "tests",
+    "happening_places/static/libs"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.7",
+    "foundation-sites": "~6.2.3"
+  }
+}

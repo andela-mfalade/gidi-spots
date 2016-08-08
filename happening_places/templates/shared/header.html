@@ -1,0 +1,26 @@
+<div class="ui menu">
+  <div class="header item">
+    <a class="" href="{{ url_for('index') }}">
+      Lagos Hotspots
+    </a>
+
+  </div>
+  <a class="item" href="{{ url_for('add') }}">
+    Categories
+  </a>
+  <a class="item" href="{{ url_for('add') }}">
+    Directories
+  </a>
+  <a class="item" href="{{ url_for('add') }}">
+    Listings
+  </a>
+  <div class="right menu">
+    <div class="ui right aligned category search item">
+      <div class="ui transparent icon input">
+        <input class="prompt" type="text" placeholder=" Search for hotspot...">
+        <i class="search link icon"></i>
+      </div>
+      <div class="results"></div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Signup for Gidi-Spots
+{% endblock %}
+
+
+{% block content %}
+<br><br><br>
+<div class="ui raised very padded text container segment">
+  <div class="header centered">
+    <h2>Welcome to Gidi-Spots!</h2>
+    <br>
+  </div>
+  <div class="ui attached center aligned grid message">
+    <p>Sign up to start spottin ;)</p>
+  </div>
+  <form class="ui form attached fluid segment" action="/signup" method="POST">
+    {{ form.hidden_tag() }}
+    <div class="two fields">
+      <div class="field">
+        <label>First Name</label>
+        {{ form.firstname }}
+        {% if form.firstname.errors %}
+        <div class="ui pointing red basic label">
+          {% for error in form.firstname.errors %}
+          {{error}}
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+      <div class="field">
+        <label>Last Name</label>
+        {{ form.lastname }}
+        {% if form.lastname.errors %}
+        <div class="ui pointing red basic label">
+          {% for error in form.lastname.errors %}
+          {{error}}
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+    </div>
+    <div class="field">
+      <label>Username</label>
+      {{ form.username }}
+      {% if form.username.errors %}
+      <div class="ui pointing red basic label">
+        {% for error in form.username.errors %}
+        {{error}}
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+    <div class="field">
+      <label>Email</label>
+      {{ form.email }}
+      {% if form.email.errors %}
+      <div class="ui pointing red basic label">
+        {% for error in form.email.errors %}
+        {{error}}
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+    <div class="field">
+      <label>Password</label>
+      {{ form.password }}
+      {% if form.password.errors %}
+      <div class="ui pointing red basic label">
+        {% for error in form.password.errors %}
+        {{error}}
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+
+    <button class="ui basic button" type="submit">
+      <i class="icon send"></i>
+      Submit
+    </button>
+    <br>
+    <br>
+
+  </form>
+  <div class="ui bottom attached warning message">
+    <i class="icon help"></i>
+    Already signed up? <a href="{{ url_for('login') }}">Login here</a> instead.
+  </div>
+</div>
+{% endblock %}

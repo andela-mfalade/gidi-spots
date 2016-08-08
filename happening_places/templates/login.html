@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Login
+{% endblock %}
+
+{% block content %}
+
+<br><br><br>
+<div class="ui raised very padded text container segment">
+  <div class="header centered">
+    <h2>Welcome to Gidi-Spots!</h2>
+    <br>
+  </div>
+  <div class="ui attached center aligned grid message">
+    <p>Login to your account</p>
+  </div>
+  <form class="ui form attached fluid segment" action="/login" method="POST">
+    {{ form.hidden_tag() }}
+    <div class="field">
+      <label>Username</label>
+      {{ form.username }}
+      {% if form.username.errors %}
+      <div class="ui pointing red basic label">
+        {% for error in form.username.errors %}
+        {{error}}
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+    <div class="field">
+      <label>Password</label>
+      {{ form.password }}
+      {% if form.password.errors %}
+      <div class="ui pointing red basic label">
+        {% for error in form.password.errors %}
+        {{error}}
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+    <div class="field">
+      <div class="ui checkbox">
+        {{ form.remember_me }}
+        <label>Keep me logged in.</label>
+      </div>
+    </div>
+    <button class="ui basic button" type="submit">
+      <i class="icon send"></i>
+      Submit
+    </button>
+  </form>
+  <div class="ui bottom attached warning message">
+    <i class="icon help"></i>
+    Don't have an account yet? <a href="{{ url_for('signup') }}">Signup here</a>.
+  </div>
+</div>
+m
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Gidispot directories
+{% endblock %}
+
+
+{% block content %}
+  <div class="ui container margin-top-lg">
+    <div class="ui raised very padded text dividing segment">
+      <h3 class="ui header">Find our Directories below</h3>
+      <p>Looking for a place to have a nice time in Lagos??</p>
+      <p>This is the right place for you.</p>
+      <p>
+        Search through our repository of awesome places in Gidi.
+      </p>
+      <p>
+        Rememeber to share this with your friends.
+      </p>
+      <p>
+        <a href="{{ url_for('add') }}">Add new listing</a>
+      </p>
+    </div>
+  </div>
+
+{% endblock %}

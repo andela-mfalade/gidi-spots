@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block content %}
+  <br><br><br><br>
+  <div class="ui raised very padded text container segment">
+
+    <h3 class="ui dividing header">
+      Add New location
+    </h3>
+    <br>
+
+    <form class="ui form" action="/add" method="POST">
+      {{ form.hidden_tag() }}
+      <div class="field">
+        <label>Hotspot Name</label>
+        {{ form.name }}
+        {% if form.name.errors %}
+        {% for error in form.name.errors %}
+        <div class="ui pointing red basic label">
+          {{ error }}
+        </div>
+        {% endfor %}
+        {% endif%}
+      </div>
+      <div class="field">
+        <label>Address</label>
+        {{ form.address }}
+        {% if form.address.errors %}
+        {% for error in form.address.errors %}
+        <div class="ui pointing red basic label">
+          {{ error }}
+        </div>
+        {% endfor %}
+        {% endif%}
+      </div>
+      <div class="field">
+        <label>Description</label></label>
+        {{ form.description }}
+        {% if form.description.errors %}
+        {% for error in form.description.errors %}
+        <div class="ui pointing red basic label">
+          {{ error }}
+        </div>
+        {% endfor %}
+        {% endif%}
+      </div>
+
+      <button class="ui basic button" type="submit">
+        <i class="icon send"></i>
+        Submit
+      </button>
+    </form>
+
+  </div>
+
+{% endblock %}

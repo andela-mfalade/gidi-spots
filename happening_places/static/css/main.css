@@ -1,0 +1,58 @@
+.secondary {
+  height: 55px
+}
+
+.ui.menu .item>i.icon {
+  font-size: 24px;
+}
+
+.padding-bottom-sm {
+  padding-bottom: 10px!important;
+}
+
+.ui.secondary.pointing.menu {
+  border-bottom: none;
+}
+
+.centered {
+  text-align: center;
+}
+
+.bordered {
+  border-bottom: 1px solid #eee
+}
+
+.well-padded {
+  padding: 100px!important;
+  margin-bottom: 14px;
+}
+
+.margin-top-lg {
+  margin-top: 80px;
+}
+
+.vertical-padding {
+  padding-top: 70px!important;
+  padding-bottom: 70px!important;
+}
+
+.listings-container {
+  background: #E9E9E9;
+}
+
+.margin-fix {
+  margin-bottom: 14px!important;
+}
+
+.ui.card, .ui.cards>.card {
+  border-radius: 0!important;
+  box-shadow: 0 1px 3px 0 #c5c5c5,0 0 0 1px #ffffff;
+}
+
+.card {
+  padding: 20px!important;
+}
+
+.ui.card>.extra, .ui.cards>.card>.extra {
+  border-top: none!important;
+}
