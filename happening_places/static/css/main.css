@@ -37,7 +37,7 @@
 }
 
 .listings-container {
-  background: #E9E9E9;
+  background: #F9FAFB;
 }
 
 .margin-fix {
@@ -55,4 +55,8 @@
 
 .ui.card>.extra, .ui.cards>.card>.extra {
   border-top: none!important;
+}
+
+.full-height {
+  height: 90vh;
 }
