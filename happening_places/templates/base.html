@@ -14,11 +14,11 @@
   <body>
     <div class="ui secondary pointing menu">
 
-      {{ nav_link('index', 'Gidi-Spots') }}
-      {{ nav_link('directories', 'Directories') }}
-      {{ nav_link('listings', 'Listings') }}
+      {{ nav_link('main.index', 'Gidi-Spots') }}
+      {{ nav_link('main.directories', 'Directories') }}
+      {{ nav_link('listing.listings', 'Listings') }}
 
-      <a class="ui item padding-bottom-sm {% if request.path == '/add' %} active {% endif %}" href="{{ url_for('add') }}">
+      <a class="ui item padding-bottom-sm {% if request.path == '/add' %} active {% endif %}" href="{{ url_for('listing.add') }}">
         <div class="ui icon button" data-content="Add users to your feed">
           <i class="add icon"></i>
         </div>
@@ -26,12 +26,12 @@
 
       <div class="right menu">
         {% if current_user.is_authenticated %}
-          {{ nav_link('dashboard', 'Dashboard') }}
-          {{ nav_link('logout', 'Logout') }}
+          {{ nav_link('auth.dashboard', 'Dashboard') }}
+          {{ nav_link('auth.logout', 'Logout') }}
           <a class="ui item"></a>
         {% else %}
-          {{ nav_link('login', 'Login') }}
-          {{ nav_link('signup', 'Signup') }}
+          {{ nav_link('auth.login', 'Login') }}
+          {{ nav_link('auth.signup', 'Signup') }}
         {% endif %}
       </div>
     </div>

@@ -15,7 +15,7 @@
   <div class="ui attached center aligned grid message">
     <p>Login to your account</p>
   </div>
-  <form class="ui form attached fluid segment" action="/login" method="POST">
+  <form class="ui form attached fluid segment" action="/auth/login" method="POST">
     {{ form.hidden_tag() }}
     <div class="field">
       <label>Username</label>
@@ -52,7 +52,7 @@
   </form>
   <div class="ui bottom attached warning message">
     <i class="icon help"></i>
-    Don't have an account yet? <a href="{{ url_for('signup') }}">Signup here</a>.
+    Don't have an account yet? <a href="{{ url_for('auth.signup') }}">Signup here</a>.
   </div>
 </div>
 m
