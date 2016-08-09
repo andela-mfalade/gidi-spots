@@ -8,71 +8,50 @@ Welcome To Gidi-Spots
 {% block content %}
   <div class="ui vertical well-padded masthead center aligned segment margin-fix">
     <h2 class="ui header">Welcome to Gidi-Spots</h2>
-    <h5>Looking for a fun place to hangout in lagos ?</h5>
+    <h5>Looking for a fun place to hangout in Lagos ?</h5>
     <h5>Search through our repository of awesome places in Gidi.</h5>
-    <h3>
-      <a href="{{ url_for('add') }}">Add new listing</a>
-    </h3>
+    <h3><a href="{{ url_for('listing.add') }}">Add new listing</a></h3>
   </div>
 
   {% if new_listings %}
-<div class="listings-container">
-  <div class="ui container">
-    <div class="trending">
-      <div class="ui center aligned grid vertical-padding">
-        <h2 class="header">Trending Listings</h2>
-      </div>
-      <div class="ui three cards">
-
-        {% for listing in new_listings %}
-        <div class="card">
-          <div class="extra">
-            <h4 class="ui header">
-              {{ listing.name }}
-            </h4>
-            <p>
-              {{ listing.description | truncate(90, killwords=True) }}
-            </p>
-            <p>
-              <small>
-                Added: {{ moment(listing.created_at).fromNow() }}
-              </small>
-            </p>
-            <a href="#" class="ui link">View Listing</a>
-          </div>
+  <div class="listings-container">
+    <div class="ui container">
+      <div class="trending">
+        <div class="ui center aligned grid vertical-padding">
+          <h2 class="header">Hot Picks</h2>
         </div>
-        {% endfor %}
-      </div>
-    </div>
-    <div class="recent">
-      <div class="ui center aligned grid vertical-padding">
-        <h2 class="header">Recent Listings</h2>
-      </div>
-      <div class="ui three cards">
-
-        {% for listing in new_listings %}
-        <div class="card">
-          <div class="extra">
-            <h4 class="ui header">
-              {{ listing.name }}
-            </h4>
-            <p>
-              {{ listing.description | truncate(90, killwords=True) }}
-            </p>
-            <p>
-              <small>
-                Added: {{ moment(listing.created_at).fromNow() }}
-              </small>
-            </p>
-            <a href="#" class="ui link">View Listing</a>
-          </div>
+        <div class="ui three cards">
+          {% for listing in new_listings %}
+            {% include 'partials/listing_card.html' %}
+          {% endfor %}
         </div>
-        {% endfor %}
+      </div>
+      <hr>
+      <div class="trending">
+        <div class="ui center aligned grid vertical-padding">
+          <h2 class="header">Trending Listings</h2>
+        </div>
+        <div class="ui three cards">
+          {% for listing in new_listings %}
+            {% include 'partials/listing_card.html' %}
+          {% endfor %}
+        </div>
+      </div>
+      <hr>
+      <div class="recent">
+        <div class="ui center aligned grid vertical-padding">
+          <h2 class="header">Recent Listings</h2>
+        </div>
+        <div class="ui three cards">
+          {% for listing in new_listings %}
+            {% include 'partials/listing_card.html' %}
+          {% endfor %}
+        </div>
       </div>
     </div>
   </div>
-</div>
-{% else %}
+  {% else %}
+
   <div class="ui container">
     <br><br><br><br>
     <div class="ui teal message">There are currently no listings on this application.</div>

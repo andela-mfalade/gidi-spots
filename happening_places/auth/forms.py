@@ -7,12 +7,7 @@ from flask.ext.wtf.html5 import URLField, EmailField
 from wtforms.validators import InputRequired, url, Email
 from wtforms.validators import Regexp, Length, ValidationError
 
-from models import User
-
-class AddLocationForm(Form):
-    name = StringField('name_of_hotspot', validators=[InputRequired()])
-    address = StringField('address', validators=[InputRequired()])
-    description = StringField('description', validators=[InputRequired()])
+from happening_places.models import User
 
 
 class SignUpForm(Form):

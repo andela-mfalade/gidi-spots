@@ -1,0 +1,16 @@
+<div class="card">
+  <div class="extra">
+    <h4 class="ui header">
+      {{ listing.name }}
+    </h4>
+    <p>
+      {{ listing.description | truncate(90, killwords=True) }}
+    </p>
+    <p>
+      <small>
+        Added: {{ moment(listing.created_at).fromNow() }}
+      </small>
+    </p>
+    <a href="/" class="ui link">View Listing</a>
+  </div>
+</div>
