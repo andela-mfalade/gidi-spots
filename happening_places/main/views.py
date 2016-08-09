@@ -1,9 +1,9 @@
 from flask import render_template
 
-
 from . import main
 from happening_places import login_manager
-from happening_places.models import User, Hotspot
+from happening_places.models import Hotspot
+from happening_places.models import User
 
 
 @login_manager.user_loader

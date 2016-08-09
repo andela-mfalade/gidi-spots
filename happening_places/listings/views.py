@@ -6,8 +6,8 @@ from flask_login import current_user
 from flask_login import login_required
 
 from . import listing
-from .. import db
 from .forms import AddLocationForm
+from happening_places import db
 from happening_places.models import Hotspot
 
 

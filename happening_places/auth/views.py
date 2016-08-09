@@ -8,9 +8,9 @@ from flask_login import login_user
 from flask_login import logout_user
 
 from .import auth
-from .. import db
 from .forms import LoginForm
 from .forms import SignUpForm
+from happening_places import db
 from happening_places.models import User
 from happening_places.models import Hotspot
 
