@@ -4,7 +4,7 @@ from flask import Flask
 from flask_login import LoginManager
 from flask_sqlalchemy import SQLAlchemy
 from flask.ext.moment import Moment
-from flask_debugtoolbar import DebugToolbarExtension
+# from flask_debugtoolbar import DebugToolbarExtension
 
 from .config import config_by_name
 
@@ -12,7 +12,7 @@ from .config import config_by_name
 # Initialize And Configure App Extensions
 db = SQLAlchemy()
 moment = Moment()
-toolbar = DebugToolbarExtension()
+# toolbar = DebugToolbarExtension()
 login_manager = LoginManager()
 login_manager.session_protection = 'strong'
 login_manager.login_view = 'auth.login'
@@ -26,7 +26,7 @@ def create_app(config_name):
     db.init_app(app)
     login_manager.init_app(app)
     moment.init_app(app)
-    toolbar.init_app(app)
+    # toolbar.init_app(app)
 
     from .auth import auth as auth_blueprint
     from .listings import listing as listing_blueprint
